@@ -2,6 +2,13 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
 let guessesRemaining = 3;
 
 document.getElementById("guessButton").addEventListener("click", guessNumber);
+document.getElementById("guessInput").addEventListener("keypress", tryFormSubmit);
+
+function tryFormSubmit(){
+  if( event.keyCode == 13){
+    guessNumber();
+  }
+}
 
 function guessNumber() {
   if (guessesRemaining === 0) {
